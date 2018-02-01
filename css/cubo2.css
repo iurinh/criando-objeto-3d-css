@@ -1,0 +1,88 @@
+.cubo{
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: translateZ(-50px) rotateX(10deg) rotateY(10deg);
+}
+
+@keyframes rodandoY {
+    from{
+        transform: rotateY(10deg);
+    }
+    to{
+        transform: rotateY(370deg);
+    }
+}
+@keyframes rodandoX {
+    from{
+        transform: rotateX(10deg);
+    }
+    to{
+        transform: rotateX(370deg);
+    }
+}
+@keyframes rodandoXY {
+    from{
+        transform: rotateX(10deg) rotateY(10deg);
+    }
+    to{
+        transform: rotateX(370deg) rotateY(370deg);
+    }
+}
+.girar{
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 100px;
+    animation: rodandoY 2s infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.girar:hover{
+    animation: rodandoX 2s infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.girar:focus{
+    animation: rodandoX 2s infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.girar:active{
+    animation: rodandoXY 2s infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.face{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.primeira{
+    background-color: blueviolet;
+}
+.segunda{
+    background-color: green;
+    transform: translateX(50px) rotateY(90deg) translateX(-50px);
+}
+.terceira{
+    transform: translateY(-50px) rotateX(90deg) translateY(50px);
+    background-color: red;
+}
+.quarta{
+    background-color: blue;
+    transform: translateX(-50px) rotateY(-90deg) translateX(50px);
+}
+.quinta{
+    transform: translateY(50px) rotateX(-90deg) translateY(-50px);
+    background-color: yellow;
+}
+.sexta{
+    transform: translateZ(100px);
+    background-color: black;
+}
+

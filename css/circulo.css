@@ -1,0 +1,19 @@
+.circulo{
+    border: 2px solid #000;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+}
+
+.circulo:hover{
+    animation: rodando 2s infinite;
+}
+
+@keyframes rodando {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}

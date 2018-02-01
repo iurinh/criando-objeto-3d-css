@@ -1,0 +1,56 @@
+.cubo{
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 100px;
+    left: 100px;    
+    transform: rotateX(0deg) rotateY(0deg);
+    transition-duration: 2s;
+}
+
+.cubo:hover{
+    transition-duration: 2s;
+    transform: rotateX(360deg) rotateX(0deg);
+}
+.cubo:active{
+    transition-duration: 2s;
+    transform: rotateX(360deg) rotateY(360deg);
+}
+.cubo:focus{
+    transition-duration: 2s;
+    transform: rotateX(0deg) rotateX(0deg);
+}
+.face{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #000;
+}
+.primeira{
+    background-color: blueviolet;
+}
+.segunda{
+    background-color: green;
+    transform: translateX(50px) rotateY(90deg) translateX(-50px);
+}
+.terceira{
+    transform: translateY(-50px) rotateX(90deg) translateY(50px);
+    background-color: red;
+}
+.quarta{
+    background-color: blue;
+    transform: translateX(-50px) rotateY(-90deg) translateX(50px);
+}
+.quinta{
+    transform: translateY(50px) rotateX(-90deg) translateY(-50px);
+    background-color: yellow;
+}
+.sexta{
+    transform: translateZ(100px);
+    background-color: black;
+}
+
