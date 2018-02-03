@@ -1,0 +1,114 @@
+:root {
+    --proporcao: 1;
+    
+    --tamanho-padrao: calc(1em * var(--proporcao));
+    --metade-tamanho-padrao: calc(0.5em * var(--proporcao));
+    --metade-tamanho-padrao-negativo: calc(-0.5em * var(--proporcao));
+    --tamanho-borda: calc(0.03em * var(--proporcao));
+    --tamanho-numero: calc(0.5em * var(--proporcao));
+    --tamanho-borda-radius: calc(0.05em * var(--proporcao));
+    /* Esses não precisam mudar a proporcao */
+    --text-shadow: 0.04em;
+    --text-shadow-negativo: -0.04em;
+    --margem-numero: 0.5em 0.1em;
+}
+
+.cubo{
+    transform-style: preserve-3d;
+    width: var(--tamanho-padrao);
+    height: var(--tamanho-padrao);
+    position: relative;
+    transform: translateZ(var(--metade-tamanho-padrao-negativo)) rotateX(10deg) rotateY(10deg);
+}
+
+@keyframes rodandoY {
+    from{
+        transform: rotateY(10deg);
+    }
+    to{
+        transform: rotateY(370deg);
+    }
+}
+@keyframes rodandoX {
+    from{
+        transform: rotateX(10deg);
+    }
+    to{
+        transform: rotateX(370deg);
+    }
+}
+@keyframes rodandoXY {
+    from{
+        transform: rotateX(10deg) rotateY(10deg);
+    }
+    to{
+        transform: rotateX(370deg) rotateY(370deg);
+    }
+}
+.girar{
+    position: absolute;
+    transform-style: preserve-3d;
+    width: var(--tamanho-padrao);
+    height: var(--tamanho-padrao);
+    top: var(--tamanho-padrao);
+    left: var(--tamanho-padrao);
+    animation: rodandoY 2s infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.girar:hover{
+    width: var(--tamanho-padrao-hover);
+    height: var(--tamanho-padrao-hover);
+}
+.girar:active{
+    
+}
+.face{
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--tamanho-padrao);
+    width: var(--tamanho-padrao);
+    border: var(--tamanho-borda) solid #000;
+    border-radius: var(--tamanho-borda-radius);
+}
+.primeira{
+    background-color: blueviolet;
+}
+.segunda{
+    background-color: green;
+    transform: translateX(var(--metade-tamanho-padrao)) rotateY(90deg) translateX(var(--metade-tamanho-padrao-negativo));
+}
+.terceira{
+    transform: translateY(var(--metade-tamanho-padrao-negativo)) rotateX(90deg) translateY(var(--metade-tamanho-padrao));
+    background-color: black;
+}
+.quarta{
+    transform: translateX(var(--metade-tamanho-padrao-negativo)) rotateY(-90deg) translateX(var(--metade-tamanho-padrao));
+    background-color: red;
+}
+.quinta{
+    transform: translateY(var(--metade-tamanho-padrao)) rotateX(-90deg) translateY(var(--metade-tamanho-padrao-negativo));
+    background-color: yellow;
+}
+.sexta{
+    transform: translateZ(var(--tamanho-padrao));
+    background-color: blue;
+}
+
+.inverter-horizontalmente{
+    transform: rotateY(180deg);
+}
+
+.numero{
+    color: #fff;
+    margin: var(--margem-numero);
+    font-size: var(--tamanho-numero);
+    text-align: center;
+    text-shadow: var(--text-shadow) 0px 0px rgba(0,0,0,0.5),
+                 var(--text-shadow-negativo) 0px 0px rgba(0,0,0,0.5),
+                 0px var(--text-shadow) 0px rgba(0,0,0,0.5),
+                 0px var(--text-shadow-negativo) 0px rgba(0,0,0,0.5);
+    font-family: sans-serif;
+}
